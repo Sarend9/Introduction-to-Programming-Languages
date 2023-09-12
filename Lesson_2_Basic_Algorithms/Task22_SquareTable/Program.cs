@@ -12,7 +12,7 @@ int[] CalculateSquares(int number)
 {
     if (number < 1)
     {
-        throw new ArgumentException("Число должно быть больше или равно 1.");
+        Console.WriteLine("Число должно быть больше или равно 1.");
     }
 
     int[] squares = new int[number];

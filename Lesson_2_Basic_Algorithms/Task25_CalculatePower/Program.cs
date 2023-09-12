@@ -7,7 +7,13 @@
 static List<double> Prompt(string prompt)
 {
     Console.Write(prompt);
-    string input = Console.ReadLine();
+    string? input = Console.ReadLine();
+
+    if (input == null)
+    {
+        Console.WriteLine("Ошибка: Введите корректные числа, разделенные запятой.");
+        Environment.Exit(0);
+    }
 
     string[] numberStrings = input.Split(',');
     List<double> numbers = new List<double>();
@@ -21,12 +27,13 @@ static List<double> Prompt(string prompt)
         else
         {
             Console.WriteLine("Ошибка: Введите корректные числа, разделенные запятой.");
-            return null;
+            Environment.Exit(0);
         }
     }
 
     return numbers;
 }
+
 
 List<double> numbers = Prompt("Введите число A и степень B: ");
 if (numbers == null || numbers.Count != 2)
