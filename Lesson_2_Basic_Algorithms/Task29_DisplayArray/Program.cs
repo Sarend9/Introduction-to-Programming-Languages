@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 /* 
-Напишите программу, которая задаёт массив 
+Задача 29: Напишите программу, которая задаёт массив 
 из 8 элементов и выводит их на экран.
 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 6, 1, 33 -> [6, 1, 33]
@@ -29,6 +29,8 @@ public class IntArrayProcessor
     {
         Console.WriteLine($"Введите числа (максимум {maxLength}) через пробел:");
         string input = Console.ReadLine();
+        //StringSplitOptions.RemoveEmptyEntries - определяет, как обрабатывать пустые элементы (пустые строки)
+        // при разделении строки на подстроки с использованием метода Split.
         string[] inputArray = input.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
 
         if (inputArray.Length > maxLength)
