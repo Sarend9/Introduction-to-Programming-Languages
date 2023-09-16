@@ -36,36 +36,39 @@ static List<double> Prompt(string prompt)
     return numbers;
 }
 
-static void PrintNumbers(List<double> numbers)
+static void CalculateRangeAndPrint(List<double> numbers)
 {
-    Console.Write("* Введеный массив: ");
-    string formattedNumbers = "[" + string.Join(", ", numbers.Select(num => num.ToString(CultureInfo.InvariantCulture)).ToList()) + "]";
-    Console.WriteLine(formattedNumbers);
+    if (numbers.Count == 0)
+    {
+        Console.WriteLine("Массив пуст.");
+        return;
+    }
+
+    double min = numbers[0];
+    double max = numbers[0];
+
+    foreach (double number in numbers)
+    {
+        if (number < min)
+            min = number;
+
+        if (number > max)
+            max = number;
+    }
+    double range = max - min;
+    string formattedNumbers = string.Join(", ", numbers.Select(num => num.ToString(CultureInfo.InvariantCulture)));
+    
+    Console.WriteLine($"* Вывод: [{formattedNumbers}] => {max.ToString(CultureInfo.InvariantCulture)} - {min.ToString(CultureInfo.InvariantCulture)} = {range.ToString(CultureInfo.InvariantCulture)}");
 }
 
+
 List<double> numbers = Prompt("* Введите числа: ");
+CalculateRangeAndPrint(numbers);
 
-PrintNumbers(numbers);
 
-
-//ТЕСТ
+//ТЕСТы
 /* 
 Console.WriteLine(numbers.Select(num => num.ToString(CultureInfo.InvariantCulture)).ToList()[0]);
 Console.WriteLine(numbers[0]);
+//Console.WriteLine(Convert.ToDouble(numbers[0]));
  */
-
-Console.WriteLine(Convert.ToDouble(numbers[0]));
-
-double min = numbers[0];
-double max = numbers[0];
-foreach (double number in numbers)
-{
-    if (number < min)
-        min = number;
-
-    if (number > max)
-        max = number;
-}
-
-double range = max - min;
-Console.WriteLine($"Разница между максимальным и минимальным элементами массива: {max} - {min} = {range}");
