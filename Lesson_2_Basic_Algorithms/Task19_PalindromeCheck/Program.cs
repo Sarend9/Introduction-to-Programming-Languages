@@ -9,19 +9,20 @@
 
 Console.Write("Введите пятизначное число: ");
 int number = int.Parse(Console.ReadLine());
-if (number.ToString().Length > 5)
+if (number.ToString().Length > 5 || number.ToString().Length < 5)
 {
     Console.WriteLine("Ошибка: введите пятизначное число");
+    Environment.Exit(0);
 }
 
 IsPalindrome(number);
 
-void IsPalindrome(int number)
+static void IsPalindrome(int number)
 {
     int reverse = 0;
     int temp = number;
 
-    for (int i = 0; i < 5; i++)
+    while(temp > 0)
     {
         reverse = reverse * 10 + temp % 10;
         temp /= 10;
