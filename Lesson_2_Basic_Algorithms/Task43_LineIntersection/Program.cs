@@ -18,12 +18,6 @@
 
 using System.Globalization;
 
-double[] k = new double[2];
-double[] b = new double[2];
-
-GetParameters(k, b);
-FindIntersection(k[0], b[0], k[1], b[1]);
-
 
 static void GetParameters(double[] k, double[] b)
 {
@@ -53,4 +47,10 @@ static void FindIntersection(double k1, double b1, double k2, double b2)
         Console.WriteLine($"* Точка пересечения: ({x.ToString(CultureInfo.InvariantCulture)}, {y.ToString(CultureInfo.InvariantCulture)})");
     }
 }
+
+double[] k = new double[2];
+double[] b = new double[2];
+
+GetParameters(k, b);
+FindIntersection(k[0], b[0], k[1], b[1]);
 
