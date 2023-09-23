@@ -230,7 +230,7 @@
 
 ## Задача 41: Подсчет положительных чисел
 
-- Код: [Task41_CountPositiveNumbers](Task41_CountPositiveNumbers/Program.cs)
+- Код: [`Task41_CountPositiveNumbers`](Task41_CountPositiveNumbers/Program.cs)
 - **Условие**: Пользователь вводит с клавиатуры M чисел. Найдите количество чисел, больших 0, введенных пользователем.
   - Пример:
     - 0, 7, 8, -2, -2 -> 2
@@ -247,7 +247,7 @@
 
 ## Задача 43: Поиск точки пересечения двух прямых
 
-- Код: [Task43_LineIntersection](Task43_LineIntersection/Program.cs)
+- Код: [`Task43_LineIntersection`](Task43_LineIntersection/Program.cs)
 - **Условие**: Напишите программу, которая находит точку пересечения двух прямых, заданных уравнениями y = k1 _ x + b1 и y = k2 _ x + b2. Значения b1, k1, b2 и k2 вводятся пользователем.
   - Пример:
     - b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0.5, -0.5)
