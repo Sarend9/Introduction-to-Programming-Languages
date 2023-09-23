@@ -8,9 +8,6 @@
     0, 7, 8, -2, -2 -> 2
     1, -7, 567, 89, 223 -> 3
  */
-
-
-
 using System.Globalization;
 
 static List<double> Prompt(string prompt)
@@ -45,8 +42,6 @@ static int CountPositiveNumbers(List<double> numbers)
     }
     return count;
 }
-
-
 
 List<double> numbers = Prompt("Введите массив через запятую: ");
 string formattedNumbers = string.Join(", ", numbers.Select(num => num.ToString(CultureInfo.InvariantCulture)));
