@@ -50,7 +50,6 @@ public class Answer
         {
             n = ValidateInput(args);
         }
-
         GeneratePascalTriangle(n);
     }
 }

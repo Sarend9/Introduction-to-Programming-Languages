@@ -19,7 +19,7 @@ using System;
 
 public class Answer
 {
-    static void Print3DMatrix(int[,,] matrix)
+    static void Print3DMatrix<T>(T[,,] matrix)
     {
         int depth = matrix.GetLength(0);
         int rows = matrix.GetLength(1);
@@ -101,6 +101,16 @@ public class Answer
 
         int[,,] matrix3D = CreateRandom3DMatrix(m, n, p, minLimitRandom, maxLimitRandom);
         Print3DMatrix(matrix3D);
+
+        Console.WriteLine("\n* Примечание:");
+        Console.WriteLine("  Для ручного определения трёхмерной матрицы введите в консоль:");
+        Console.WriteLine("  dotnet run m n p minLimitRandom maxLimitRandom");
+        Console.WriteLine("  где:");
+        Console.WriteLine("    m - количество слоев;");
+        Console.WriteLine("    n - количество строк в каждом слое;");
+        Console.WriteLine("    p - количество столбцов в каждом слое;");
+        Console.WriteLine("    minLimitRandom - минимальное значение случайных чисел;");
+        Console.WriteLine("    maxLimitRandom - максимальное значение случайных чисел.");
 
     }
 }

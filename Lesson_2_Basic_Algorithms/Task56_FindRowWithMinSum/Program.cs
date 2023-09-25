@@ -3,6 +3,16 @@
     Задайте прямоугольный двумерный массив.
     Напишите программу, которая будет находить 
     строку с наименьшей суммой элементов.
+
+    Например, задан массив:
+    ```
+    1 4 7 2
+    5 9 2 3
+    8 4 2 4
+    5 2 6 7
+    ```
+    Программа считает сумму элементов в каждой строке и выдаёт 
+    номер строки с наименьшей суммой элементов: 1 строка
 */
 
 using System;
@@ -10,7 +20,7 @@ using System;
 public class Answer
 {
 
-    public static void PrintMatrix(int[,] matrix)
+    public static void PrintMatrix<T>(T[,] matrix)
     {
         int numRows = matrix.GetLength(0);
         int numCols = matrix.GetLength(1);
@@ -42,7 +52,6 @@ public class Answer
 
     public static void FindRowWithMinSum(int[,] matrix)
     {
-        Console.WriteLine("Удаление строки и столбца с минимальным элементом:");
         int numRows = matrix.GetLength(0);
         int numCols = matrix.GetLength(1);
 
@@ -66,7 +75,7 @@ public class Answer
                 minSumRowsIndex = i;
             }
         }
-        Console.WriteLine($"Номер строки с наименьшей суммой: {minSumRowsIndex + 1}\n");
+        Console.WriteLine($"\nНомер строки с наименьшей суммой: {minSumRowsIndex + 1}\n");
     }
 
 
@@ -94,6 +103,15 @@ public class Answer
         PrintMatrix(array);
         Console.WriteLine();
         FindRowWithMinSum(array);
+
+        Console.WriteLine("\n* Примечание:");
+        Console.WriteLine("  Для ручного определения матрицы введите: dotnet run m n minLimitRandom maxLimitRandom");
+        Console.WriteLine("  где:");
+        Console.WriteLine("    m - количество строк;");
+        Console.WriteLine("    n - количество столбцов;");
+        Console.WriteLine("    minLimitRandom - минимальное значение случайных элементов матриц;");
+        Console.WriteLine("    maxLimitRandom - максимальное значение случайных элементов матриц.\n");
+
     }
 }
 

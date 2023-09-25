@@ -53,7 +53,6 @@ public class Answer
 
     public static void MultiplyMatrices(int[,] matrix1, int[,] matrix2)
     {
-        Console.WriteLine("Умножение матриц:");
         int numRows1 = matrix1.GetLength(0);
         int numCols1 = matrix1.GetLength(1);
         int numRows2 = matrix2.GetLength(0);
@@ -119,12 +118,24 @@ public class Answer
         int[,] array_1 = { { 1, 2 }, { 3, 4 } };
         int[,] array_2 = { { 5, 6 }, { 7, 8 } };
         */
-
+        Console.WriteLine("\nПеврая матрица");
         PrintMatrix(array_1);
-        Console.WriteLine();
+        Console.WriteLine("\nВторая матрица");
         PrintMatrix(array_2);
-        Console.WriteLine();
+        Console.WriteLine("\nУмножение матриц:");
         MultiplyMatrices(array_1, array_2);
+
+        Console.WriteLine("\n* Примечание:");
+        Console.WriteLine("  Для ручного определения первой и второй матрицы введите:"); 
+        Console.WriteLine("  dotnet run m1 n1 m2 n2 minLimitRandom maxLimitRandom");
+        Console.WriteLine("  где:");
+        Console.WriteLine("    m1 - количество строк первой матрицы;");
+        Console.WriteLine("    n1 - количество столбцов первой матрицы;");
+        Console.WriteLine("    m2 - количество строк второй матрицы;");
+        Console.WriteLine("    n2 - количество столбцов второй матрицы;");
+        Console.WriteLine("    minLimitRandom - минимальное значение случайных элементов матриц;");
+        Console.WriteLine("    maxLimitRandom - максимальное значение случайных элементов матриц.\n");
+
     }
 }
 
