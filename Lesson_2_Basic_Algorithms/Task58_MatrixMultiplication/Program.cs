@@ -71,7 +71,7 @@ public class Answer
             for (int j = 0; j < numCols2; j++)
             {
                 int sum = 0;
-                for (int k = 0; k < numCols1; k++)
+                for (int k = 0; k < numRows2; k++)
                 {
                     // Console.WriteLine($"resultMatrix[{i},{j}] = matrix1[{i},{k}] x matrix2[{k},{j}]"); //Отладка
                     sum += matrix1[i, k] * matrix2[k, j];
@@ -111,13 +111,13 @@ public class Answer
             minLimitRandom = -10;
             maxLimitRandom = 10;
         }
-        int[,] array_1 = CreateRandomMatrix(m1, n1, minLimitRandom, maxLimitRandom);
+        /* int[,] array_1 = CreateRandomMatrix(m1, n1, minLimitRandom, maxLimitRandom);
         int[,] array_2 = CreateRandomMatrix(m2, n2, minLimitRandom, maxLimitRandom);
+ */
 
-        /*   
-        int[,] array_1 = { { 1, 2 }, { 3, 4 } };
-        int[,] array_2 = { { 5, 6 }, { 7, 8 } };
-        */
+        int[,] array_1 = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
+        int[,] array_2 = { { 7, 8, 9 }, { 10, 11, 12 } };
+
         Console.WriteLine("\nПеврая матрица");
         PrintMatrix(array_1);
         Console.WriteLine("\nВторая матрица");
@@ -126,7 +126,7 @@ public class Answer
         MultiplyMatrices(array_1, array_2);
 
         Console.WriteLine("\n* Примечание:");
-        Console.WriteLine("  Для ручного определения первой и второй матрицы введите:"); 
+        Console.WriteLine("  Для ручного определения первой и второй матрицы введите:");
         Console.WriteLine("  dotnet run m1 n1 m2 n2 minLimitRandom maxLimitRandom");
         Console.WriteLine("  где:");
         Console.WriteLine("    m1 - количество строк первой матрицы;");
