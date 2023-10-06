@@ -250,7 +250,7 @@
 
         return sortedArray;
     }
-
+    //параллельная сортировка подсчетом
     public static void PrepareParallelCountingSort(int[] inputArray, int THREADS_NUMBER, object lock_object)
     {
         int max = inputArray.Max();

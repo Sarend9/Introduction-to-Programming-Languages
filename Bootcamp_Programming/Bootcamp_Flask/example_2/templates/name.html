@@ -1,16 +1,9 @@
 {% extends 'base.html' %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{title}}</title>
-</head>
-<body>
-{% block content %}
-<ol> <!--Нумерованный список-->
-    {% for row in names %}
-    <li><b>{{ row }}</b></li>
-    {% endfor %}
-</ol>
+
+{% block title %}
+  Title-NAME - {{ super() }}
 {% endblock %}
-</body>
-</html>
+
+{% block content %}
+    <h2>NAME !!!</h2>
+{% endblock %}
